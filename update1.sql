@@ -104,13 +104,13 @@ Exec FindLåner '4'
 
 
 --CREATE DB BACKUP
---Open the folder where all SQL Server database backup is stored, right-click on it and select “Properties”, uncheck “Read-Only”.
+--Find the folder "C:\backup", right-click on it and select "Properties", uncheck "Read-Only".
 BACKUP DATABASE Biblioteket 
 TO DISK = 'C:\backup\Biblioteket.bak';
 
  
 --BACKUP DB PROCEDURE
---Open the folder where all SQL Server database backup is stored, right-click on it and select “Properties”, uncheck “Read-Only”.
+--Find the folder "C:\backup", right-click on it and select "Properties", uncheck "Read-Only".
 CREATE PROCEDURE BackupDB 
 AS
 BACKUP DATABASE Biblioteket 
