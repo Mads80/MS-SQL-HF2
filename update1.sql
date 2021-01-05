@@ -88,15 +88,25 @@ Go
 Exec LånerData 'Jørgen', 'Jørgensen', 'Skibhusvej 2', '88888888', '5000', '14-11-2001'
 
 
---Opretter procedure til at finde bruger ved hjælp af lånerID (virker)
-Create Procedure FindLåner
+--Opretter procedure til at finde bruger ved hjælp af LånerID
+Create Procedure FindLånerID
 @LånerID int 
 AS
 Select * From Låner 
 Where LånerID = @LånerID 
 go
 --Søg efter låner--
-Exec FindLåner '4'
+Exec FindLånerID '4'
+
+--Opretter procedure til at finde bruger ved hjælp af LånerFornavn
+Create Procedure FindLånerNavn
+@LånerFornavn varchar(55)
+AS
+Select * From Låner 
+Where LånerFornavn = @LånerFornavn 
+go
+--Søg efter låner--
+Exec FindLånerNavn 'Mark'
 
 
 --CREATE DB BACKUP
