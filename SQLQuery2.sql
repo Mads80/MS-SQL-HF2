@@ -230,7 +230,7 @@ TO DISK = 'C:\Biblioteket.bak';
 EXEC BackupDB; 
 
 
-test
+test pølse
 
 
 pølse
