@@ -37,7 +37,7 @@ BogForfatter varchar(55) NOT NULL,
 --Indsætter data i tabellen “Bog”--
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
-INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
+INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Den tavse enke','Sara Blædel') 
 INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt') 
 INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt') 
@@ -48,17 +48,17 @@ INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard')
 INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')   
 INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')
 INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')
-INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','0') 
-INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','1') 
-INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','1')  
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','1') 
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','0') 
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','0') 
+INSERT INTO Bog VALUES ('KNIV','Jo Nesbø') 
+INSERT INTO Bog VALUES ('KNIV','Jo Nesbø') 
+INSERT INTO Bog VALUES ('KNIV','Jo Nesbø')  
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
 
 --Udlån af bøger-- 
 --CREATE TABLE Udlån (
---BogID int FOREIGN KEY REFERENCES Bog(BogID) ,
+--BogID int FOREIGN KEY REFERENCES Bog(BogID),
 --UdlånTilgængelighed int 
 --); 
 
@@ -77,11 +77,11 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','0')
 --Procedure for data til tabel-- 
 CREATE PROCEDURE LånerData
 
-@LånerFornavn varchar (20) ,
-@LånerEfternavn varchar (20) ,
-@LånerAdresse varchar (20) ,
-@LånerTelefonnummer int  ,
-@LånerPostnummer int , 
+@LånerFornavn varchar (20),
+@LånerEfternavn varchar (20),
+@LånerAdresse varchar (20),
+@LånerTelefonnummer int,
+@LånerPostnummer int, 
 @LånerTilmeldingsdato varchar(20)
 as
 INSERT INTO Låner (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
