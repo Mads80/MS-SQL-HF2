@@ -89,7 +89,7 @@ INSERT INTO Låner (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefon
 Values (@LånerFornavn, @LånerEfternavn, @LånerAdresse, @LånerTelefonnummer, @LånerPostnummer, @LånerTilmeldingsdato) 
 Go
 --Indsæt en ny låner--
-Exec LånerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '05-01-2021'
+Exec LånerData 'Jørgen', 'Jørgensen', 'Skibhusvej 2', '88888888', '5000', '14-11-2001'
 
 
 --Opretter procedure til at finde bruger ved hjælp af lånerID (virker)
