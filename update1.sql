@@ -13,7 +13,7 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 ); 
 
 
---Indsætter data i tabellen “Låner”--
+--Indsætter data i tabellen Låner--
 INSERT INTO Låner 
 (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
 VALUES 
@@ -34,7 +34,7 @@ BogForfatter varchar(55) NOT NULL,
 ); 
 
 
---Indsætter data i tabellen “Bog”--
+--Indsætter data i tabellen Bog--
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
@@ -87,8 +87,9 @@ as
 INSERT INTO Låner (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
 
 Values (@LånerFornavn, @LånerEfternavn, @LånerAdresse, @LånerTelefonnummer, @LånerPostnummer, @LånerTilmeldingsdato) 
-Go 
-Exec LånerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '5-01-2021'
+Go
+--Indsæt en ny låner--
+Exec LånerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '05-01-2021'
 
 
 --Opretter procedure til at finde bruger ved hjælp af lånerID (virker)
@@ -98,16 +99,16 @@ AS
 Select * From Låner 
 Where LånerID = @LånerID 
 go
---Søg efter låner
+--Søg efter låner--
 Exec FindLåner '4'
 
 
---CREATE DB BACKUP
+--CREATE DB BACKUP--
 BACKUP DATABASE Biblioteket 
 TO DISK = 'C:\Biblioteket.bak';
 
  
---BACKUP DB PROCEDURE 
+--BACKUP DB PROCEDURE--
 CREATE PROCEDURE BackupDB 
 AS
 BACKUP DATABASE Biblioteket 
