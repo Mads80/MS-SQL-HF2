@@ -10,44 +10,44 @@ Tabeller:
 
 --Brugere: 
 
-CREATE TABLE LÂner ( 
+CREATE TABLE L√•ner ( 
 
-LÂnerID int IDENTITY (1,1) PRIMARY KEY, 
+L√•nerID int IDENTITY (1,1) PRIMARY KEY, 
 
-LÂnerFornavn varchar(55) NOT NULL, 
+L√•nerFornavn varchar(55) NOT NULL, 
 
-LÂnerEfternavn varchar(55) NOT NULL, 
+L√•nerEfternavn varchar(55) NOT NULL, 
 
-LÂnerAdresse varchar(55) NOT NULL, 
+L√•nerAdresse varchar(55) NOT NULL, 
 
-LÂnerTelefonnummer int NOT NULL, 
+L√•nerTelefonnummer int NOT NULL, 
 
-LÂnerPostnummer int NOT NULL, 
+L√•nerPostnummer int NOT NULL, 
 
-LÂnerTilmeldingsdato varchar(55) NOT NULL, 
+L√•nerTilmeldingsdato varchar(55) NOT NULL, 
 
 ); 
 
  
 
---IndsÊtter data i tabellen ìLÂnerî. 
+--Inds√¶tter data i tabellen ‚ÄúL√•ner‚Äù. 
 
-INSERT INTO LÂner 
+INSERT INTO L√•ner 
 
-(LÂnerFornavn, LÂnerEfternavn, LÂnerAdresse, LÂnerTelefonnummer, LÂnerPostnummer, LÂnerTilmeldingsdato) 
+(L√•nerFornavn, L√•nerEfternavn, L√•nerAdresse, L√•nerTelefonnummer, L√•nerPostnummer, L√•nerTilmeldingsdato) 
 
 VALUES 
 
-('Mark','Pedersen','SkovmÊrkevej 2','66666666','5000','18-05-2020'), 
-('Mads','Finseth','S¯ndre Havnevej 60','60706070','5000','13-11-2019'), 
-('Jacob','Vilhelmsen','HÊkkehusvej 43','41224472','5000','13-11-2001'),
+('Mark','Pedersen','Skovm√¶rkevej 2','66666666','5000','18-05-2020'), 
+('Mads','Finseth','S√∏ndre Havnevej 60','60706070','5000','13-11-2019'), 
+('Jacob','Vilhelmsen','H√¶kkehusvej 43','41224472','5000','13-11-2001'),
 ('Paul','Newman','Hvenetved 88','90765531','5000','13-11-2001'),
 ('Gitte','Heino','Ruegyden 16','90907788','5000','13-11-2001') 
 ;
 
  
 
---B¯ger: -- 
+--B√∏ger: -- 
 
 CREATE TABLE Bog ( 
 
@@ -57,13 +57,13 @@ BogNavn varchar(55) NOT NULL,
 
 BogForfatter varchar(55) NOT NULL, 
 
-BogUdlÂn int NOT NULL 
+BogUdl√•n int NOT NULL 
 
 ); 
 
  
 
---IndsÊtter data i tabellen ìBogî. 
+--Inds√¶tter data i tabellen ‚ÄúBog‚Äù. 
 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
 
@@ -71,13 +71,13 @@ INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1')
 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
 
-INSERT INTO Bog VALUES ('Den tavse enke','Sara BlÊdel','0') 
+INSERT INTO Bog VALUES ('Den tavse enke','Sara Bl√¶del','0') 
 
 INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt','0') 
 
 INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt','0') 
 
-INSERT INTO Bog VALUES ('Fandens ForÂr','Niels Krause-KjÊr','1') 
+INSERT INTO Bog VALUES ('Fandens For√•r','Niels Krause-Kj√¶r','1') 
 
 INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','0') 
 
@@ -85,25 +85,23 @@ INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','1')
 
 INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','1') 
 
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L‰ckberg','1')   
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L√§ckberg','1')   
 
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L‰ckberg','0')
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L√§ckberg','0')
 
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L‰ckberg','1')
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla L√§ckberg','1')
 
-INSERT INTO Bog VALUES ('KNIV','Jo Nesb¯','0') 
+INSERT INTO Bog VALUES ('KNIV','Jo Nesb√∏','0') 
 
-INSERT INTO Bog VALUES ('KNIV','Jo Nesb¯','1') 
+INSERT INTO Bog VALUES ('KNIV','Jo Nesb√∏','1') 
 
-INSERT INTO Bog VALUES ('KNIV','Jo Nesb¯','1')  
+INSERT INTO Bog VALUES ('KNIV','Jo Nesb√∏','1')  
 
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis J¸rgensen','1') 
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis J√ºrgensen','1') 
 
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis J¸rgensen','0') 
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis J√ºrgensen','0') 
 
-INSERT INTO Bog VALUES ('Hviskende lig','Dennis J¸rgensen','0') 
-
- 
+INSERT INTO Bog VALUES ('Hviskende lig','Dennis J√ºrgensen','0') 
 
  
 
@@ -119,21 +117,23 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis J¸rgensen','0')
 
  
 
---UdlÂn af b¯ger: -- 
+ 
 
-CREATE TABLE UdlÂn (
+--Udl√•n af b√∏ger: -- 
+
+CREATE TABLE Udl√•n (
 
 BogID int FOREIGN KEY REFERENCES Bog(BogID) ,
 
-UdlÂnTilgÊngelighed int 
+Udl√•nTilg√¶ngelighed int 
 
 ); 
 
  
 
-INSERT INTO UdlÂn 
+INSERT INTO Udl√•n 
 
-('BogID','UdlÂnTilgÊngelighed') 
+('BogID','Udl√•nTilg√¶ngelighed') 
 
 VALUES 
 
@@ -143,7 +143,7 @@ VALUES
 
  
 
---Returnering af b¯ger: 
+--Returnering af b√∏ger: 
 
 CREATE TABLE Retur ( 
 
@@ -157,47 +157,47 @@ BogID int FOREIGN KEY REFERENCES Bog(BogID)
 
 --Procedure for data til tabel -- 
 
-Create procedure LÂnerData   
+Create procedure L√•nerData   
 
-@LÂnerFornavn varchar (20) ,
+@L√•nerFornavn varchar (20) ,
 
-@LÂnerEfternavn varchar (20) ,
+@L√•nerEfternavn varchar (20) ,
 
-@LÂnerAdresse varchar (20) ,
+@L√•nerAdresse varchar (20) ,
 
-@LÂnerTelefonnummer int  ,
+@L√•nerTelefonnummer int  ,
 
-@LÂnerPostnummer int , 
+@L√•nerPostnummer int , 
 
-@LÂnerTilmeldingsdato varchar(20), 
+@L√•nerTilmeldingsdato varchar(20), 
 
-@LÂnerUdlÂn int
+@L√•nerUdl√•n int
 
 as
 
-INSERT INTO LÂner (LÂnerFornavn, LÂnerEfternavn, LÂnerAdresse, LÂnerTelefonnummer, LÂnerPostnummer, LÂnerTilmeldingsdato, LÂnerUdlÂn) 
+INSERT INTO L√•ner (L√•nerFornavn, L√•nerEfternavn, L√•nerAdresse, L√•nerTelefonnummer, L√•nerPostnummer, L√•nerTilmeldingsdato, L√•nerUdl√•n) 
 
-Values (@LÂnerFornavn, @LÂnerEfternavn, @LÂnerAdresse, @LÂnerTelefonnummer, @LÂnerPostnummer, @LÂnerTilmeldingsdato, @LÂnerUdlÂn) 
+Values (@L√•nerFornavn, @L√•nerEfternavn, @L√•nerAdresse, @L√•nerTelefonnummer, @L√•nerPostnummer, @L√•nerTilmeldingsdato, @L√•nerUdl√•n) 
 
 Go 
 
  
 
-Exec LÂnerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '5-01-2021','Harry potter og kaninknepperen'
+Exec L√•nerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '5-01-2021','Harry potter og kaninknepperen'
 
  
 
---Opretter procedure til at finde bruger ved hjÊlp af lÂnerID 
+--Opretter procedure til at finde bruger ved hj√¶lp af l√•nerID 
 
-Create Procedure Find_lÂner 
+Create Procedure Find_l√•ner 
 
-@LÂnerID int 
+@L√•nerID int 
 
 AS 
 
-Select * From LÂner 
+Select * From L√•ner 
 
-Where LÂnerID = @LÂnerID 
+Where L√•nerID = @L√•nerID 
 
  
 
@@ -228,3 +228,6 @@ TO DISK = 'C:\Biblioteket.bak';
   
 
 EXEC BackupDB; 
+
+
+test
