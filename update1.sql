@@ -111,17 +111,22 @@ Exec LånerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '5-01-202
 
 
 
---Opretter procedure til at finde bruger ved hjælp af lånerID 
+--Opretter procedure til at finde bruger ved hjælp af lånerID (virker)
 
---Create Procedure Find_låner 
+Create Procedure Find_låner 
 
---@LånerID int 
+@LånerID int 
 
---AS 
+AS 
 
---Select * From Låner 
+Select * From Låner 
 
---Where LånerID = @LånerID 
+Where LånerID = @LånerID 
+
+ go
+
+ Exec Find_Låner '1'
+
 
  
 
