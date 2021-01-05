@@ -56,18 +56,14 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
 
---Udlån af bøger-- 
---CREATE TABLE Udlån (
---BogID int FOREIGN KEY REFERENCES Bog(BogID),
---UdlånTilgængelighed int 
---); 
+CREATE TABLE Udlån (
+UdlånTilgængelighed int NOT NULL,
+BogID int FOREIGN KEY REFERENCES Bog(BogID),
+); 
 
---INSERT INTO Udlån--
---('BogID','UdlånTilgængelighed') 
---VALUES 
---('5','0') 
---;
- 
+INSERT INTO Udlån
+VALUES ('0','14');
+
 --Returnering af bøger--
 --CREATE TABLE Retur ( 
 --	BogID int FOREIGN KEY REFERENCES Bog(BogID) 
