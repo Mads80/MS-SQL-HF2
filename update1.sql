@@ -20,9 +20,9 @@ VALUES
 
 ('Mark','Pedersen','Skovmærkevej 2','66666666','5000','18-05-2020'), 
 ('Mads','Finseth','Søndre Havnevej 60','60706070','5000','13-11-2019'), 
-('Jacob','Vilhelmsen','Hækkehusvej 43','41224472','5000','13-11-2001'),
-('Paul','Newman','Hvenetved 88','90765531','5000','13-11-2001'),
-('Gitte','Heino','Ruegyden 16','90907788','5000','13-11-2001') 
+('Jacob','Vilhelmsen','Hækkehusvej 43','41224472','5000','12-05-2001'),
+('Paul','Newman','Hvenetved 88','90765531','5000','30-12-1998'),
+('Gitte','Heino','Ruegyden 16','90907788','5000','17-04-2011') 
 ;
 
 
