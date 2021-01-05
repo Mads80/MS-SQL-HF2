@@ -1,14 +1,7 @@
- 
+ ---Biblioteket---
 
---Biblioteket 
 
- 
-
-Tabeller: 
- 
-
---Brugere: 
-
+--Tabel med vores lånere/brugere--
 CREATE TABLE Låner ( 
 LånerID int IDENTITY (1,1) PRIMARY KEY, 
 LånerFornavn varchar(55) NOT NULL, 
@@ -19,10 +12,8 @@ LånerPostnummer int NOT NULL,
 LånerTilmeldingsdato varchar(55) NOT NULL, 
 ); 
 
- 
 
---Indsætter data i tabellen “Låner”. 
-
+--Indsætter data i tabellen “Låner”--
 INSERT INTO Låner 
 
 (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
@@ -36,10 +27,8 @@ VALUES
 ('Gitte','Heino','Ruegyden 16','90907788','5000','13-11-2001') 
 ;
 
- 
 
---Bøger: -- 
-
+--Bøger--
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
 BogNavn varchar(55) NOT NULL, 
@@ -47,10 +36,8 @@ BogForfatter varchar(55) NOT NULL,
 BogUdlån int NOT NULL 
 ); 
 
- 
 
---Indsætter data i tabellen “Bog”. 
-
+--Indsætter data i tabellen “Bog”--
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
@@ -72,28 +59,25 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','0')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen','0') 
 
 
---Udlån af bøger: -- 
+--Udlån af bøger-- 
+--CREATE TABLE Udlån (
+--BogID int FOREIGN KEY REFERENCES Bog(BogID) ,
+--UdlånTilgængelighed int 
+--); 
 
-CREATE TABLE Udlån (
-BogID int FOREIGN KEY REFERENCES Bog(BogID) ,
-UdlånTilgængelighed int 
-); 
-
-
-INSERT INTO Udlån
-('BogID','UdlånTilgængelighed') 
-VALUES 
-('5','0') 
-;
+--INSERT INTO Udlån--
+--('BogID','UdlånTilgængelighed') 
+--VALUES 
+--('5','0') 
+--;
  
---Returnering af bøger: 
+--Returnering af bøger--
+--CREATE TABLE Retur ( 
+--	BogID int FOREIGN KEY REFERENCES Bog(BogID) 
+--); 
 
-CREATE TABLE Retur ( 
-	BogID int FOREIGN KEY REFERENCES Bog(BogID) 
-); 
 
-
---Procedure for data til tabel -- 
+--Procedure for data til tabel-- 
 CREATE PROCEDURE LånerData
 
 @LånerFornavn varchar (20) ,
@@ -110,34 +94,25 @@ Go
 Exec LånerData 'Mads', 'Finseth', 'Skibhusvej 2', '88888888', '5000', '5-01-2021'
 
 
-
 --Opretter procedure til at finde bruger ved hjælp af lånerID (virker)
-
-Create Procedure Find_låner 
-
+Create Procedure FindLåner
 @LånerID int 
-
-AS 
-
+AS
 Select * From Låner 
-
 Where LånerID = @LånerID 
+go
+--Søg efter låner
+Exec FindLåner '4'
 
- go
-
- Exec Find_Låner '1'
-
-
- 
 
 --CREATE DB BACKUP
-BACKUP DATABASE Sportsvognklub 
-TO DISK = 'C:\Biblioteket.bak'; 
+BACKUP DATABASE Biblioteket 
+TO DISK = 'C:\Biblioteket.bak';
 
  
 --BACKUP DB PROCEDURE 
 CREATE PROCEDURE BackupDB 
 AS
-BACKUP DATABASE Sportsvognklub 
+BACKUP DATABASE Biblioteket 
 TO DISK = 'C:\Biblioteket.bak'; 
 EXEC BackupDB;
