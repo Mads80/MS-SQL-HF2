@@ -32,25 +32,24 @@ VALUES
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
 BogNavn varchar(55) NOT NULL, 
-BogForfatter varchar(55) NOT NULL, 
-BogUdlån int NOT NULL 
+BogForfatter varchar(55) NOT NULL,
 ); 
 
 
 --Indsætter data i tabellen “Bog”--
+INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
+INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
-INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
-INSERT INTO Bog VALUES ('Skjult','Cara Hunter','1') 
-INSERT INTO Bog VALUES ('Den tavse enke','Sara Blædel','0') 
-INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt','0') 
-INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt','0') 
-INSERT INTO Bog VALUES ('Fandens Forår','Niels Krause-Kjær','1') 
-INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','0') 
-INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','1') 
-INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard','1') 
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg','1')   
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg','0')
-INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg','1')
+INSERT INTO Bog VALUES ('Den tavse enke','Sara Blædel') 
+INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt') 
+INSERT INTO Bog VALUES ('Ulvesommer','Hans Rosenfeldt') 
+INSERT INTO Bog VALUES ('Fandens Forår','Niels Krause-Kjær') 
+INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard') 
+INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard') 
+INSERT INTO Bog VALUES ('Ferrari','Peter Nygaard') 
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')   
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')
+INSERT INTO Bog VALUES ('Det gyldne bur','Camilla Läckberg')
 INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','0') 
 INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','1') 
 INSERT INTO Bog VALUES ('KNIV','Jo Nesbø','1')  
