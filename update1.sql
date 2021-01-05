@@ -73,19 +73,20 @@ VALUES ('0','14');
 --Procedure for data til tabel-- 
 CREATE PROCEDURE LånerData
 
-@LånerFornavn varchar (20),
-@LånerEfternavn varchar (20),
-@LånerAdresse varchar (20),
+@LånerFornavn varchar(55),
+@LånerEfternavn varchar(55),
+@LånerAdresse varchar(55),
 @LånerTelefonnummer int,
 @LånerPostnummer int, 
-@LånerTilmeldingsdato varchar(20)
-as
+@LånerTilmeldingsdato varchar(55)
+AS
 INSERT INTO Låner (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
 
 Values (@LånerFornavn, @LånerEfternavn, @LånerAdresse, @LånerTelefonnummer, @LånerPostnummer, @LånerTilmeldingsdato) 
-Go
+GO
 --Indsæt en ny låner--
 Exec LånerData 'Jørgen', 'Jørgensen', 'Skibhusvej 2', '88888888', '5000', '14-11-2001'
+Exec LånerData 'Trine', 'Trunten', 'Damhusgården 420', '69696969', '5000', '25-05-1991'
 
 
 --Opretter procedure til at finde bruger ved hjælp af LånerID
