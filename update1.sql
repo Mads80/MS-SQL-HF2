@@ -15,9 +15,7 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 
 --Indsætter data i tabellen “Låner”--
 INSERT INTO Låner 
-
 (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
-
 VALUES 
 
 ('Mark','Pedersen','Skovmærkevej 2','66666666','5000','18-05-2020'), 
