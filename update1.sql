@@ -115,6 +115,16 @@ SELECT UdgivelsesNavn, UdgivelsesDato
 FROM KommendeUdgivelser
 Order by UdgivelsesNavn
 
+--Opretter view der viser kommende udgivelser
+CREATE VIEW KommendeUdgivelserView
+AS
+SELECT UdgivelsesNavn, UdgivelsesDato
+FROM KommendeUdgivelser
+
+--Her henter vi data fra vores VIEW. Det er mere sikkert at hente data fra en VIEW istedet direkte fra tabellen.
+SELECT * FROM KommendeUdgivelserView
+ORDER BY UdgivelsesNavn
+
 
 /*-----------------------------------------------------------------------------------------------------------------------------
 Udlån
