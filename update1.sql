@@ -73,6 +73,31 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
+--Table til Kommende bog udgivelser
+CREATE TABLE KommendeUdgivelser (
+UdgivelsesNavn varchar (55) NOT NULL,
+UdgivelsesForfatter varchar (55) NOT NULL,
+UdgivelsesDato varchar (55) NOT NULL,
+UdgivelsesAntal int
+);
+
+--Stored Procedure til at tilføje Kommende udgivelser
+Create procedure TilføjUdgivelser
+@UdgivelsesNavn varchar (55),
+@UdgivelsesForfatter varchar(55),
+@UdgivelsesDato int,
+@UdgivelsesAntal varchar(55)
+AS
+INSERT INTO KommendeUdgivelser (UdgivelsesNavn, UdgivelsesForfatter, UdgivelsesDato, UdgivelsesAntal)
+
+Values (@UdgivelsesNavn, @UdgivelsesForfatter, @UdgivelsesDato, @UdgivelsesAntal)
+GO
+
+--Insæt en kommende bog--
+Exec TilføjUdgivelser 'Det kolde guld', 'Cilla Börjlind', '05-2-2021', '5'
+
+
+
 ---------------------------------------------------------|Udlån|---------------------------------------------------------
 
 --Opretter tabellen Udlån--
