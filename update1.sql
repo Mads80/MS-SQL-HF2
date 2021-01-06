@@ -12,7 +12,6 @@ LånerPostnummer int NOT NULL,
 LånerTilmeldingsdato varchar(55) NOT NULL, 
 ); 
 
-
 --Indsætter data i tabellen Låner--
 INSERT INTO Låner 
 (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
@@ -51,7 +50,6 @@ BogNavn varchar(55) NOT NULL,
 BogForfatter varchar(55) NOT NULL,
 ); 
 
-
 --Indsætter data i tabellen Bog--
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
 INSERT INTO Bog VALUES ('Skjult','Cara Hunter') 
@@ -73,7 +71,6 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
-
 CREATE TABLE Udlån (
 UdlånTilgængelighed int NOT NULL,
 BogID int FOREIGN KEY REFERENCES Bog(BogID),
@@ -81,6 +78,7 @@ BogID int FOREIGN KEY REFERENCES Bog(BogID),
 
 INSERT INTO Udlån
 VALUES ('0','14');
+
 
 --Returnering af bøger--
 --CREATE TABLE Retur ( 
@@ -113,7 +111,6 @@ Exec FindLånerNavn 'Mark'
 --Find folderen "C:\backup", højre-klick på den og vælg "Properties", uncheck "Read-Only".
 BACKUP DATABASE Biblioteket 
 TO DISK = 'C:\backup\Biblioteket.bak';
-
  
 --BACKUP DB PROCEDURE
 --Find folderen "C:\backup", højre-klick på den og vælg "Properties", uncheck "Read-Only".
