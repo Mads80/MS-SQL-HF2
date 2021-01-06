@@ -1,5 +1,6 @@
  ---Biblioteket---
 
+---------------------------------------------------------|Lånere|---------------------------------------------------------
 
 --Tabel med vores lånere/brugere--
 CREATE TABLE Låner ( 
@@ -42,6 +43,7 @@ GO
 Exec LånerData 'Jørgen', 'Jørgensen', 'Skibhusvej 2', '88888888', '5000', '14-11-2001'
 Exec LånerData 'Trine', 'Trunten', 'Damhusgården 420', '69696969', '5000', '25-05-1991'
 
+---------------------------------------------------------|Bøger|---------------------------------------------------------
 
 --Bøger--
 CREATE TABLE Bog ( 
@@ -71,6 +73,7 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
+---------------------------------------------------------|Udlån|---------------------------------------------------------
 
 --Opretter tabellen Udlån--
 CREATE TABLE Udlån (
@@ -134,6 +137,8 @@ End
 Exec BogPåLager
 Select @@ROWCOUNT
 
+---------------------------------------------------------|Søgning i lånere|---------------------------------------------------------
+
 --Find bruger ved hjælp af LånerID
 Create Procedure FindLånerID
 @LånerID int 
@@ -154,6 +159,7 @@ go
 --Søg efter låner--
 Exec FindLånerNavn 'Mark'
 
+---------------------------------------------------------|Backup|---------------------------------------------------------
 
 --CREATE DB BACKUP
 --Find folderen "C:\backup", højre-klick på den og vælg "Properties", uncheck "Read-Only".
