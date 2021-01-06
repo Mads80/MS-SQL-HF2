@@ -76,14 +76,22 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 CREATE TABLE Udlån (
 UdlånTilgængelighed int NOT NULL,
 BogID int FOREIGN KEY REFERENCES Bog(BogID),
-);
+LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 
---Indsætter data i tabellen Udlån--
---0 betyder at bogen er udlånt--
---1 betyder at bogen er på lager--
+); 
+
 INSERT INTO Udlån
-VALUES ('0','14');
+VALUES ('0','10','3')
 
+--Når en bog kommer ud/ind kan nedenstående tabel update køres for at opdatere status. Husk også at ændre korrekte BogID --
+UPDATE Udlån
+SET UdlånTilgængelighed = 1
+WHERE BogID = 1;
+
+--Man kan også opdatere på baggrund af lånerID (hvis en låner kommer og aflevere alle bøger vedkomne har lånt) --
+UPDATE Udlån
+SET UdlånTilgængelighed = 1
+WHERE LånerID = 3;
 
 --Opretter procedure til at finde bruger ved hjælp af LånerID
 Create Procedure FindLånerID
