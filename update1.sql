@@ -115,7 +115,7 @@ WHERE LånerID = 3;
 --Se hvilke bøger der er udlånt--
 Create Procedure BogUdlån
 AS
---Start
+--Start procedure
 Begin
 Select * from  Udlån
 Where UdlånTilgængelighed = 0
@@ -123,7 +123,7 @@ End
 Exec BogUdlån
 Select @@ROWCOUNT
 
---Procedure til at finde bruger ved hjælp af LånerID
+--Find bruger ved hjælp af LånerID
 Create Procedure FindLånerID
 @LånerID int 
 AS
@@ -133,7 +133,7 @@ go
 --Søg efter låner--
 Exec FindLånerID '4'
 
---Procedure til at finde bruger ved hjælp af LånerFornavn
+--Find bruger ved hjælp af LånerFornavn
 Create Procedure FindLånerNavn
 @LånerFornavn varchar(55)
 AS
