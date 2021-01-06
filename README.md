@@ -17,7 +17,7 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 ); 
 ```
 
-Dernest har vi en tabel som hedder Udlån.
+:technologist: Dernest har vi en tabel som hedder Udlån.
 ```sql
 CREATE TABLE Udlån (
 UdlånTilgængelighed int NOT NULL,
@@ -26,7 +26,7 @@ LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 );
 ```
 
-Tabellen Udlån tager fat i Låner tabellen og den sidste tabel som vi har kaldt Bog.
+:orange_book: Tabellen Udlån tager fat i Låner tabellen og den sidste tabel som vi har kaldt Bog.
 ```sql
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
