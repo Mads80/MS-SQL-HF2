@@ -24,7 +24,6 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 INSERT INTO Låner 
 (LånerFornavn, LånerEfternavn, LånerAdresse, LånerTelefonnummer, LånerPostnummer, LånerTilmeldingsdato) 
 VALUES 
-
 ('Mark','Pedersen','Skovmærkevej 2','66666666','5000','18-05-2020'), 
 ('Mads','Finseth','Søndre Havnevej 60','60706070','5000','13-11-2019'), 
 ('Jacob','Vilhelmsen','Hækkehusvej 43','41224472','5000','12-05-2001'),
@@ -56,7 +55,7 @@ Bøger
 ------------------------------------------------------------------------------------------------------------------------------*/
 
 
---Bøger--
+--Opretter tabellen Bog--
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
 BogNavn varchar(55) NOT NULL, 
@@ -84,7 +83,7 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
---Table til Kommende bog udgivelser
+--Opretter tabellen KommendeUdgivelser
 CREATE TABLE KommendeUdgivelser  (
 KommendeUdgivelserID int IDENTITY (1,1) PRIMARY KEY,
 UdgivelsesNavn varchar (55) NOT NULL,
@@ -93,7 +92,7 @@ UdgivelsesDato varchar (55) NOT NULL,
 UdgivelsesAntal int
 );
 
---Stored Procedure til at tilføje Kommende udgivelser
+--Stored Procedure til at tilføje kommende udgivelser
 Create procedure TilføjUdgivelser
 @UdgivelsesNavn varchar (55),
 @UdgivelsesForfatter varchar(55),
