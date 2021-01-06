@@ -2,7 +2,8 @@
 
 ### :blue_book: Dokumentation for ER-diagram/planlægning af case.
 
-Vi har valgt at oprette 4 tabeller, hvor 3 af dem har forbindelse til hinanden. Den sidste tabel står for sig selv som og den viser kommende udgivelse af bøger.
+
+I denne opgave har vi valgt at oprette 4 tabeller, hvor 3 af dem har forbindelse til hinanden. Den sidste tabel står for sig selv som og den viser kommende udgivelse af bøger.
 
 :student: Låner som vi har valgt at kalde vores første tabel, indeholder al information omkring lånerne på Biblioteket.
 ```sql
