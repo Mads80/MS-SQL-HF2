@@ -111,13 +111,13 @@ Exec FindLånerNavn 'Mark'
 
 
 --CREATE DB BACKUP
---Find the folder "C:\backup", right-click on it and select "Properties", uncheck "Read-Only".
+--Find folderen "C:\backup", højre-klick på den og vælg "Properties", uncheck "Read-Only".
 BACKUP DATABASE Biblioteket 
 TO DISK = 'C:\backup\Biblioteket.bak';
 
  
 --BACKUP DB PROCEDURE
---Find the folder "C:\backup", right-click on it and select "Properties", uncheck "Read-Only".
+--Find folderen "C:\backup", højre-klick på den og vælg "Properties", uncheck "Read-Only".
 CREATE PROCEDURE BackupDB 
 AS
 BACKUP DATABASE Biblioteket 
