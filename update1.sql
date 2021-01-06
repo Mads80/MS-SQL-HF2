@@ -164,6 +164,17 @@ End
 Exec BogUdlån
 Select @@ROWCOUNT
 
+--Se hvilke bøger der er på lager--
+Create Procedure BogPåLager
+AS
+--Start procedure
+Begin
+Select * from  Udlån
+Where UdlånTilgængelighed = 1
+End
+Exec BogPåLager
+Select @@ROWCOUNT
+
 
 ---------------------------------------------------------|Søgning i lånere|-----------------------------------------------------------------------------
 
