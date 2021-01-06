@@ -49,4 +49,4 @@ UdgivelsesAntal int
 ```
 
 Entity-Relationship-Diagram
-![Entity–relationship model](Erdiagram02.png)
+![Entity–relationship model](images/Erdiagram02.png)
