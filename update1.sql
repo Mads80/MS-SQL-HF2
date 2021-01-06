@@ -99,13 +99,13 @@ Values (@UdgivelsesNavn, @UdgivelsesForfatter, @UdgivelsesDato, @UdgivelsesAntal
 GO
 
 --Insæt en kommende bog--
-Exec TilføjUdgivelser 'Det kolde guld', 'Cilla Börjlind', '05-2-2021', '5'
+Exec TilføjUdgivelser 'Det kolde guld', 'Cilla Börjlind', '05-02-2021', '5'
 Exec TilføjUdgivelser '1794', 'Niklas Natt och Dag', '12-12-2022', '2'
-Exec TilføjUdgivelser 'Lars Kjædegaard', 'Løgn i din hals', '05-2-2021', '4'
+Exec TilføjUdgivelser 'Lars Kjædegaard', 'Løgn i din hals', '05-02-2021', '4'
 Exec TilføjUdgivelser 'Ni liv', 'Emelie Schepp', '04-09-2023', '1'
 
---Se kommende udgivelser
-SELECT UdgivelsesNavn
+--Se kommende udgvielser
+SELECT UdgivelsesNavn, UdgivelsesDato
 FROM KommendeUdgivelser
 Order by UdgivelsesNavn
 
