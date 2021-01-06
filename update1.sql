@@ -25,7 +25,7 @@ VALUES
 ('Gitte','Heino','Ruegyden 16','90907788','5000','17-04-2011') 
 ;
 
---Procedure for data til tabel-- 
+--Procedure for at indsætte data i tabellen Låner-- 
 CREATE PROCEDURE LånerData
 
 @LånerFornavn varchar(55),
