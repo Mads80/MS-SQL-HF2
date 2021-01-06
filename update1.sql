@@ -91,14 +91,23 @@ INSERT INTO Udlån VALUES ('0','3','2')
 INSERT INTO Udlån VALUES ('0','15','3')
 INSERT INTO Udlån VALUES ('0','2','1')
 INSERT INTO Udlån VALUES ('0','14','3')
+INSERT INTO Udlån VALUES ('1','7','4')
+INSERT INTO Udlån VALUES ('1','7','4')
+INSERT INTO Udlån VALUES ('1','7','4')
 INSERT INTO Udlån VALUES ('0','7','3')
+INSERT INTO Udlån VALUES ('0','7','3')
+INSERT INTO Udlån VALUES ('0','7','7')
+INSERT INTO Udlån VALUES ('0','7','7')
+INSERT INTO Udlån VALUES ('0','7','1')
+INSERT INTO Udlån VALUES ('0','7','3')
+INSERT INTO Udlån VALUES ('0','7','1')
 
---Når en bog kommer ud/ind kan nedenstående tabel update køres for at opdatere status. Husk også at ændre korrekte BogID --
+--Når en bog kommer ud/ind kan nedenstående tabel update køres for at opdatere status. Husk også at ændre korrekte BogID--
 UPDATE Udlån
 SET UdlånTilgængelighed = 1
 WHERE BogID = 1;
 
---Man kan også opdatere på baggrund af lånerID (hvis en låner kommer og aflevere alle bøger vedkomne har lånt) --
+--Man kan også opdatere på baggrund af lånerID (hvis en låner kommer og aflevere alle bøger vedkomne har lånt)--
 UPDATE Udlån
 SET UdlånTilgængelighed = 1
 WHERE LånerID = 3;
@@ -108,7 +117,8 @@ Create Procedure BogUdlån
 AS
 --Start
 Begin
-Select * from Udlån
+Select * from  Udlån
+Where UdlånTilgængelighed = 0
 End
 Exec BogUdlån
 Select @@ROWCOUNT
