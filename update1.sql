@@ -77,9 +77,11 @@ CREATE TABLE Udlån (
 UdlånTilgængelighed int NOT NULL,
 BogID int FOREIGN KEY REFERENCES Bog(BogID),
 LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
-
 ); 
 
+--Indsætter data i tabellen Udlån--
+--0 betyder at bogen er udlånt--
+--1 betyder at bogen er på lager--
 INSERT INTO Udlån
 VALUES ('0','10','3')
 
