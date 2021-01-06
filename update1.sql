@@ -81,12 +81,21 @@ UdgivelsesDato varchar (55) NOT NULL,
 UdgivelsesAntal int
 );
 
+
+--Table til Kommende bog udgivelser
+CREATE TABLE KommendeUdgivelser (
+UdgivelsesNavn varchar (55) NOT NULL,
+UdgivelsesForfatter varchar (55) NOT NULL,
+UdgivelsesDato varchar (55) NOT NULL,
+UdgivelsesAntal int
+);
+
 --Stored Procedure til at tilføje Kommende udgivelser
 Create procedure TilføjUdgivelser
 @UdgivelsesNavn varchar (55),
 @UdgivelsesForfatter varchar(55),
-@UdgivelsesDato int,
-@UdgivelsesAntal varchar(55)
+@UdgivelsesDato varchar(55),
+@UdgivelsesAntal int
 AS
 INSERT INTO KommendeUdgivelser (UdgivelsesNavn, UdgivelsesForfatter, UdgivelsesDato, UdgivelsesAntal)
 
