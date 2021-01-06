@@ -17,8 +17,27 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 ); 
 ```
 
+Dernest har vi en tabel som hedder Udlån.
+```sql
+CREATE TABLE Udlån (
+UdlånTilgængelighed int NOT NULL,
+BogID int FOREIGN KEY REFERENCES Bog(BogID),
+LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
+);
+```
 
-Dernest har vi en tabel som hedder: Udlån, Som båder tager fat i Låner tabellen og den sidste tabel: Bog, og giver information om hvilken bog og hvem der har lånt den. I bog tabellen er alt information om bøger i bibloteket. 
+Tabellen Udlån tager fat i Låner tabellen og den sidste tabel som vi har kaldt Bog.
+```sql
+CREATE TABLE Bog ( 
+BogID int IDENTITY (1,1) PRIMARY KEY, 
+BogNavn varchar(55) NOT NULL, 
+BogForfatter varchar(55) NOT NULL,
+); 
+```
+
+
+
+Tabellen Bog giver information om hvilken bog og hvem der har lånt den. I bog tabellen er alt information om bøger i bibloteket. 
 Som sidst nævte tabel har vi KommendeUdgivelser, som kan vise alle kommende bøger, med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen. 
 
 ![Entity–relationship model](Erdiagram02.png)
