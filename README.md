@@ -37,7 +37,7 @@ BogForfatter varchar(55) NOT NULL,
 ```
 Tabellen Bog giver information om hvilken bog og hvem der har lånt den. I bog-tabellen er alt information om bøger i bibloteket.
 
-Som sidst nævte tabel har vi KommendeUdgivelser, som kan vise alle kommende bøger, med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen.
+:notebook: Som sidst nævte tabel har vi KommendeUdgivelser, som kan vise alle kommende bøger, med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen.
 ```sql
 CREATE TABLE KommendeUdgivelser  (
 KommendeUdgivelserID int IDENTITY (1,1) PRIMARY KEY,
@@ -48,4 +48,5 @@ UdgivelsesAntal int
 );
 ```
 
+Entity-Relationship-Diagram
 ![Entity–relationship model](Erdiagram02.png)
