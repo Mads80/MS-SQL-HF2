@@ -108,27 +108,27 @@ LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 ); 
 
 --Indsætter data i tabellen Udlån--
---0 betyder at bogen er udlånt--
+--2 betyder at bogen er udlånt--
 --1 betyder at bogen er på lager--
-INSERT INTO Udlån VALUES ('0','1','2')
-INSERT INTO Udlån VALUES ('0','10','1')
-INSERT INTO Udlån VALUES ('0','11','3')
-INSERT INTO Udlån VALUES ('0','6','5')
-INSERT INTO Udlån VALUES ('0','8','3')
-INSERT INTO Udlån VALUES ('0','3','2')
-INSERT INTO Udlån VALUES ('0','15','3')
-INSERT INTO Udlån VALUES ('0','2','1')
-INSERT INTO Udlån VALUES ('0','14','3')
+INSERT INTO Udlån VALUES ('2','1','2')
+INSERT INTO Udlån VALUES ('2','10','1')
+INSERT INTO Udlån VALUES ('2','11','3')
+INSERT INTO Udlån VALUES ('2','6','5')
+INSERT INTO Udlån VALUES ('2','8','3')
+INSERT INTO Udlån VALUES ('2','3','2')
+INSERT INTO Udlån VALUES ('2','15','3')
+INSERT INTO Udlån VALUES ('2','2','1')
+INSERT INTO Udlån VALUES ('2','14','3')
 INSERT INTO Udlån VALUES ('1','7','4')
 INSERT INTO Udlån VALUES ('1','7','4')
 INSERT INTO Udlån VALUES ('1','7','4')
-INSERT INTO Udlån VALUES ('0','7','3')
-INSERT INTO Udlån VALUES ('0','7','3')
-INSERT INTO Udlån VALUES ('0','7','7')
-INSERT INTO Udlån VALUES ('0','7','7')
-INSERT INTO Udlån VALUES ('0','7','1')
-INSERT INTO Udlån VALUES ('0','7','3')
-INSERT INTO Udlån VALUES ('0','7','1')
+INSERT INTO Udlån VALUES ('2','7','3')
+INSERT INTO Udlån VALUES ('2','7','3')
+INSERT INTO Udlån VALUES ('2','7','7')
+INSERT INTO Udlån VALUES ('2','7','7')
+INSERT INTO Udlån VALUES ('2','7','1')
+INSERT INTO Udlån VALUES ('2','7','3')
+INSERT INTO Udlån VALUES ('2','7','1')
 
 --Når en bog kommer ud/ind kan nedenstående tabel update køres for at opdatere status. Husk også at ændre korrekte BogID--
 UPDATE Udlån
@@ -146,20 +146,9 @@ AS
 --Start procedure
 Begin
 Select * from  Udlån
-Where UdlånTilgængelighed = 0
+Where UdlånTilgængelighed = 2
 End
 Exec BogUdlån
-Select @@ROWCOUNT
-
---Se hvilke bøger der er på lager--
-Create Procedure BogPåLager
-AS
---Start procedure
-Begin
-Select * from  Udlån
-Where UdlånTilgængelighed = 1
-End
-Exec BogPåLager
 Select @@ROWCOUNT
 
 ---------------------------------------------------------|Søgning i lånere|---------------------------------------------------------
