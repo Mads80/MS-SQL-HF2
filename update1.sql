@@ -78,15 +78,8 @@ INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen')
 INSERT INTO Bog VALUES ('Hviskende lig','Dennis Jürgensen') 
 
 --Table til Kommende bog udgivelser
-CREATE TABLE KommendeUdgivelser (
-UdgivelsesNavn varchar (55) NOT NULL,
-UdgivelsesForfatter varchar (55) NOT NULL,
-UdgivelsesDato varchar (55) NOT NULL,
-UdgivelsesAntal int
-);
-
---Table til Kommende bog udgivelser
-CREATE TABLE KommendeUdgivelser (
+CREATE TABLE KommendeUdgivelserID  (
+KommendeUdgivelserID int IDENTITY (1,1) PRIMARY KEY,
 UdgivelsesNavn varchar (55) NOT NULL,
 UdgivelsesForfatter varchar (55) NOT NULL,
 UdgivelsesDato varchar (55) NOT NULL,
