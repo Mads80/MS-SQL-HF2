@@ -85,12 +85,6 @@ INSERT INTO Udlån
 VALUES ('0','14');
 
 
---Returnering af bøger--
---CREATE TABLE Retur ( 
---	BogID int FOREIGN KEY REFERENCES Bog(BogID) 
---); 
-
-
 --Opretter procedure til at finde bruger ved hjælp af LånerID
 Create Procedure FindLånerID
 @LånerID int 
