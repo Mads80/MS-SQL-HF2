@@ -82,8 +82,16 @@ LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 --Indsætter data i tabellen Udlån--
 --0 betyder at bogen er udlånt--
 --1 betyder at bogen er på lager--
-INSERT INTO Udlån
-VALUES ('0','10','3')
+INSERT INTO Udlån VALUES ('0','1','2')
+INSERT INTO Udlån VALUES ('0','10','1')
+INSERT INTO Udlån VALUES ('0','11','3')
+INSERT INTO Udlån VALUES ('0','6','5')
+INSERT INTO Udlån VALUES ('0','8','3')
+INSERT INTO Udlån VALUES ('0','3','2')
+INSERT INTO Udlån VALUES ('0','15','3')
+INSERT INTO Udlån VALUES ('0','2','1')
+INSERT INTO Udlån VALUES ('0','14','3')
+INSERT INTO Udlån VALUES ('0','7','3')
 
 --Når en bog kommer ud/ind kan nedenstående tabel update køres for at opdatere status. Husk også at ændre korrekte BogID --
 UPDATE Udlån
@@ -95,7 +103,17 @@ UPDATE Udlån
 SET UdlånTilgængelighed = 1
 WHERE LånerID = 3;
 
---Opretter procedure til at finde bruger ved hjælp af LånerID
+--Se hvilke bøger der er udlånt--
+Create Procedure BogUdlån
+AS
+--Start
+Begin
+Select * from Udlån
+End
+Exec BogUdlån
+Select @@ROWCOUNT
+
+--Procedure til at finde bruger ved hjælp af LånerID
 Create Procedure FindLånerID
 @LånerID int 
 AS
@@ -105,7 +123,7 @@ go
 --Søg efter låner--
 Exec FindLånerID '4'
 
---Opretter procedure til at finde bruger ved hjælp af LånerFornavn
+--Procedure til at finde bruger ved hjælp af LånerFornavn
 Create Procedure FindLånerNavn
 @LånerFornavn varchar(55)
 AS
