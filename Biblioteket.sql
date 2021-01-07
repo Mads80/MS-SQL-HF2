@@ -33,7 +33,6 @@ VALUES
 
 --Procedure for at indsætte data i tabellen Låner
 CREATE PROCEDURE LånerData
-
 @LånerFornavn varchar(55),
 @LånerEfternavn varchar(55),
 @LånerAdresse varchar(55),
@@ -254,12 +253,12 @@ DROP TABLE Låner;
 Create Procedure SletDB
 AS
 Drop database Biblioteket;
-
+--
 EXEC SletDB;
 
 --Slet tabel procedure
 Create Procedure SletTabel
 AS
 Drop table Bog;
-
+--
 EXEC SletTabel;
