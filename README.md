@@ -27,7 +27,7 @@ LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 );
 ```
 
-:orange_book: Tabellen Udlån har forbindelse med Låner tabellen. Den sidste tabel har vi kaldt Bog.
+:orange_book: Tabellen Udlån har forbindelse med Låner tabellen. Bog tabellen indeholder information omkring bøger.
 ```sql
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
@@ -35,7 +35,6 @@ BogNavn varchar(55) NOT NULL,
 BogForfatter varchar(55) NOT NULL,
 ); 
 ```
-Bog tabellen indeholder information om bøger og hvem der har lånt den.
 
 :notebook: Den sidste tabel vi har er KommendeUdgivelser, som viser alle kommende bøger; med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen.
 ```sql
