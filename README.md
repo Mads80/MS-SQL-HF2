@@ -47,5 +47,5 @@ UdgivelsesAntal int
 );
 ```
 
-Entity-Relationship-Diagram
+:link: Entity-Relationship-Diagram
 ![Entity–relationship model](images/Erdiagram02.png)
