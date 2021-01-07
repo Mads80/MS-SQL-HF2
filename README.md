@@ -5,7 +5,7 @@
 
 I denne opgave har vi valgt at oprette 4 tabeller, hvor 3 af dem har forbindelse til hinanden. Den sidste tabel står for sig selv som og den viser kommende udgivelse af bøger.
 
-:student: Låner som vi har valgt at kalde vores første tabel, indeholder al information omkring lånerne på Biblioteket.
+:student: "Låner" som vi har valgt at kalde vores første tabel, indeholder al information omkring lånerne på Biblioteket.
 ```sql
 CREATE TABLE Låner ( 
 LånerID int IDENTITY (1,1) PRIMARY KEY, 
@@ -18,7 +18,7 @@ LånerTilmeldingsdato varchar(55) NOT NULL,
 ); 
 ```
 
-:technologist: Dernest har vi en tabel som hedder Udlån.
+:technologist: Dernest har vi en tabel som hedder "Udlån".
 ```sql
 CREATE TABLE Udlån (
 UdlånTilgængelighed int NOT NULL,
@@ -27,7 +27,7 @@ LånerID INT FOREIGN KEY REFERENCES Låner(LånerID)
 );
 ```
 
-:orange_book: Tabellen Udlån har forbindelse med Låner tabellen. Bog tabellen indeholder information omkring bøger.
+:orange_book: Tabellen "Udlån" har forbindelse med "Låner" tabellen. "Bog" tabellen indeholder information omkring bøger.
 ```sql
 CREATE TABLE Bog ( 
 BogID int IDENTITY (1,1) PRIMARY KEY, 
@@ -36,7 +36,7 @@ BogForfatter varchar(55) NOT NULL,
 ); 
 ```
 
-:notebook: Den sidste tabel vi har er KommendeUdgivelser, som viser alle kommende bøger; med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen.
+:notebook: Den sidste tabel vi har er "KommendeUdgivelser", som viser alle kommende bøger; med navn, forfatter, udgivelses dato og hvor mange antal der er bestilt hjem af bogen.
 ```sql
 CREATE TABLE KommendeUdgivelser  (
 KommendeUdgivelserID int IDENTITY (1,1) PRIMARY KEY,
