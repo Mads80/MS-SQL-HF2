@@ -240,7 +240,7 @@ EXEC BackupDB;
 
 
 /*-----------------------------------------------------------------------------------------------------------------------------
-Sletning af tabeller og databaser
+Sletning af tabeller og databaser - brug på eget ansvar. :)
 ------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -253,12 +253,12 @@ DROP TABLE Låner;
 Create Procedure SletDB
 AS
 Drop database Biblioteket;
---
+--Slet DB
 EXEC SletDB;
 
 --Slet tabel procedure
 Create Procedure SletTabel
 AS
 Drop table Bog;
---
+--Slet Tabel
 EXEC SletTabel;
