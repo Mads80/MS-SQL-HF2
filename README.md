@@ -1,6 +1,6 @@
 # :books: Biblioteket
 
-### :blue_book: Dokumentation for ER-diagram/planlægning af case.
+### :blue_book: Dokumentation for bibliotekets database.
 
 
 I denne opgave har vi valgt at oprette 4 tabeller, hvor 3 af dem har forbindelse til hinanden. Den sidste tabel står for sig selv og den indeholder kommende udgivelse af bøger.
@@ -49,6 +49,8 @@ UdgivelsesAntal int
 
 :link: Entity-Relationship-Diagram
 ![Entity–relationship model](images/Erdiagram02.png)
+
+For at indkorporere 1. normalisering så har vi benyttet os af primary og foreign keys. F.eks. har vores Låner tabel et LånerID som er en unik værdi for hver låner der er indskrevet i biblioteket. Dette ID har vi taget med over i vores Udlåns tabel som fortæller os hvilke bøger der er ledige til udlån, og hvis de er udlånt hvilken låner der har bogen. På denne måde sikre vi os at vi ikke gentager attributter fordi LånerID både vil give mening i Låner og Udlån tabellen.
 
 
 :capital_abcd: Se [Biblioteket.sql](https://github.com/Mads80/MS-SQL-HF2/blob/main/Biblioteket.sql) for den fulde SQL-kode og kommentarer.
