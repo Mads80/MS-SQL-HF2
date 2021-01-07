@@ -49,3 +49,6 @@ UdgivelsesAntal int
 
 :link: Entity-Relationship-Diagram
 ![Entity–relationship model](images/Erdiagram02.png)
+
+
+:capital_abcd: Se [Biblioteket.sql](https://github.com/Mads80/MS-SQL-HF2/blob/main/Biblioteket.sql) for den fulde SQL-kode og kommentarer.
